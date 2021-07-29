@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm
+from forms import RegistrationForm, LoginForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import secrets
@@ -28,6 +28,20 @@ def home():
 @app.route("/about")
 def about():
     return render_template('about.html', subtitle='About Page', text='This is the about page')
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    #login and validate user 
+    if form.validate_on_submit():
+#        login_user(user)
+        if form.username == 'admin' and form.password.data == 'admin':
+            flash(f'Logged in successfully', 'success')
+       # next = request.args.get('next')
+       #if not is_safe_url(next):
+       #    return flask.abort(400)
+
+        return redirect(url_for('home'))
+    return render_template('login.html', title='Login', form=form)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
