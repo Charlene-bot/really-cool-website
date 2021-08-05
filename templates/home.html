@@ -1,6 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>"Welcome to the home page"</h1>
-    <h2>{{ subtitle }}</h2>
-    <p>{{ text }}</p>
-{% endblock content %}
+    <h1>"Welcome to the Recipe page"</h1>
+    <p>"Search for recipes from all over the world"</p>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">	
+	 <div class="carousel-inner">
+		 <div class="carousel-item active">
+			<img src="{{url_for('static', filename='food.jpg')}}" class="center" alt="food image">
+		 </div>
+	</div>
+    </div>
+    <form action="/recipes">
+    <div class="input-group offset-3">
+	<input
+	   type="text"
+    	   class="form-control"
+	   placeholder="Search Recipe"
+    	   />
+    <div class="input-group-append">
+	<button 
+	  class="btn btn-outline-secondary"
+   	  type="button"
+      	  id="search">
+	Search</button>
+    </form>
+    </div>
+	{% endblock content %}

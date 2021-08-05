@@ -1,7 +1,15 @@
 body {
-  background: #fafafa;
+  /*background: #fafafa;
   color: #333333;
-  margin-top: 5rem;
+  margin-top: 5rem;*/
+  background: #f3e0e2; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column; 
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh; 
+  margin: -20px 0 50px; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,14 +32,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.content-section {
+/*.content-section {
   background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+}*/
+.form {
+position: relative; 
+z-index: 1; 
+background: #FFFFFF;
+max-width: 360px; 
+margin: 0 auto 100px;
+padding: 4px; 
+text-align: center; 
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); 
 }
 
+.input-group{
+margin-top: 50px; 
+margin-bottom: 50px;
+width:40%;
+margin-left: auto;
+margin-right: auto; 
+}
+
+.center{
+display: block;
+margin-left: 0;
+margin-right: 0;
+width: 100%;
+}
+.form .message a {
+color: #4CAF50;
+text-decoration: none; 
+}
 .article-title {
   color: #444444;
 }
